@@ -1,0 +1,86 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "ssb-20190112170257-authRole",
+			"UnauthRoleArn": "arn:aws:iam::279531331877:role/ssb-20190112170257-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::279531331877:role/ssb-20190112170257-authRole",
+			"Region": "us-west-2",
+			"DeploymentBucketName": "ssb-20190112170257-deployment",
+			"UnauthRoleName": "ssb-20190112170257-unauthRole",
+			"StackName": "ssb-20190112170257",
+			"StackId": "arn:aws:cloudformation:us-west-2:279531331877:stack/ssb-20190112170257/f5e04320-16ce-11e9-82b2-503aca41a0fd"
+		}
+	},
+	"auth": {
+		"cognitod9af9571": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/ssb-20190112170257-deployment/amplify-cfn-templates/auth/cognitod9af9571-cloudformation-template.yml",
+				"logicalId": "authcognitod9af9571"
+			},
+			"lastPushTimeStamp": "2019-01-15T07:24:33.814Z",
+			"output": {
+				"AppClientSecret": "1v8pk6d3a7sogff171o0gjoih3s1hvrmm6pe94k7hd2mgbm4slsk",
+				"UserPoolId": "us-west-2_wnES1W3J6",
+				"AppClientIDWeb": "5e9no08imopvs6tjocdgn01r9f",
+				"AppClientID": "2m7bj9kss8j4qo3tqmi693e6ek",
+				"IdentityPoolId": "us-west-2:afd65f29-470b-4cec-814c-d1106dc7c7a2",
+				"IdentityPoolName": "cognitod9af9571_identitypool_d9af9571",
+				"UserPoolName": "cognitod9af9571_userpool_d9af9571"
+			},
+			"lastPushDirHash": "Af9ZJmICqMnMk9GWOazy6gPtjeA="
+		}
+	},
+	"storage": {
+		"SSBStorage": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/ssb-20190112170257-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+				"logicalId": "storageSSBStorage"
+			},
+			"lastPushTimeStamp": "2019-01-15T07:24:33.817Z",
+			"output": {
+				"BucketName": "ssb9b13f03d7f7a43c889496e049c4c83b9",
+				"Region": "us-west-2"
+			},
+			"lastPushDirHash": "xHPFu8Flr8Yskd6m4o/EQU/26xM="
+		}
+	},
+	"hosting": {
+		"S3AndCloudFront": {
+			"service": "S3AndCloudFront",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/ssb-20190112170257-deployment/amplify-cfn-templates/hosting/template.json",
+				"logicalId": "hostingS3AndCloudFront"
+			},
+			"lastPushTimeStamp": "2019-01-15T07:24:33.832Z",
+			"output": {
+				"S3BucketSecureURL": "https://super-smash-media-collection.s3.amazonaws.com",
+				"WebsiteURL": "http://super-smash-media-collection.s3-website-us-west-2.amazonaws.com",
+				"Region": "us-west-2",
+				"HostingBucketName": "super-smash-media-collection"
+			},
+			"lastPushDirHash": "wogYI4gPZcy+gK1eCpJsoVIkTAk="
+		}
+	},
+	"analytics": {
+		"ssb": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/ssb-20190112170257-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
+				"logicalId": "analyticsssb"
+			},
+			"lastPushTimeStamp": "2019-01-15T07:24:33.828Z",
+			"output": {
+				"appName": "ssb",
+				"Region": "us-west-2",
+				"Id": "099e6b3607cc4320a524429bf9bd4b8a"
+			},
+			"lastPushDirHash": "vdLZOW5AWu39OaPwMBJt9q3Y6A0="
+		}
+	}
+}

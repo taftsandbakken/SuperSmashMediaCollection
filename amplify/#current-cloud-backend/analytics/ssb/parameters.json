@@ -1,0 +1,11 @@
+{
+    "appName": "ssb",
+    "roleName": "pinpointLambdaRolecc38bda7",
+    "cloudWatchPolicyName": "cloudWatchPolicycc38bda7",
+    "pinpointPolicyName": "pinpointPolicycc38bda7",
+    "authPolicyName": "pinpoint_amplify_cc38bda7",
+    "unauthPolicyName": "pinpoint_amplify_cc38bda7",
+    "authRoleName": "ssb-20190112170257-authRole",
+    "unauthRoleName": "ssb-20190112170257-unauthRole",
+    "IAMPrefix": "279531331877"
+}

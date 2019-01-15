@@ -1,0 +1,89 @@
+<div class="app">
+    <div class="app-header">
+        <h1>Super Smash Ultimate Media Collection</h1>
+        <h4>An experiment with AWS 3S Storage API (Using Super Smash as a fun topic)</h4>
+    </div>
+    <div class="app-body">
+        <div class="file-list">
+            <span class="file-list-title">File List</span>
+            <span class="default-upload-text">
+            {{fileListText}}
+            </span>
+            <img class="refresh-button"
+                 (click)="getFileList()"
+                 src="https://www.freeiconspng.com/uploads/refresh-icon-0.png">
+            <div class="file-list-container">
+                <table *ngIf="files.length"
+                       class="file-table">
+                    <tr *ngFor="let file of files"
+                        (click)="selectFile(file)"
+                        class="file-row">
+                        <td class="file-thumbnail">
+                            <img [src]="file.defaultPreviewUrl || file.publicUrl" 
+                                 *ngIf="file.publicUrl">
+                        </td>
+                        <td class="file-name">
+                            {{file.key || file.name}}<br>({{file.size/1000}} KB)
+                        </td>
+                    </tr>
+                </table>
+                <span *ngIf="files.length"
+                      class="total-file-size">
+                  Total File Space: {{totalFileSize/1000}} KB
+                </span>
+            </div>
+        </div>
+        <div class="preview-media">
+            <img class="delete-button"
+                 (click)="deleteMedia()"
+                 src="https://www.freeiconspng.com/uploads/remove-icon-png-26.png"
+                 *ngIf="selectedFile && selectedFile.publicUrl">
+            <span class="default-preview-text"
+                  *ngIf="!(selectedFile && selectedFile.publicUrl)">
+              (Click on a file to preview it here)
+            </span>
+            <img [src]="selectedFile.defaultPreviewUrl || selectedFile.publicUrl" 
+                 class="preview-image"
+                 *ngIf="selectedFile && selectedFile.publicUrl && !selectedFile.isVideo">
+            <video width="320" 
+                   height="240" 
+                   class="preview-video"
+                   id="video-media"
+                   controls
+                   *ngIf="selectedFile.isVideo">
+                <source [src]="selectedFile.publicUrl" 
+                        type="video/mp4">
+            </video>
+            <span class="preview-name">{{selectedFile.key || selectedFile.name}}</span>
+        </div>
+        <button (click)="findSmashMedia()" 
+                class="media-button upload-button">Find Smash Media</button>
+        <input id="file-input" 
+               type="file" 
+               name="name" 
+               hidden />
+        <button (click)="downloadSmashMedia()" 
+                class="media-button download-button"
+                *ngIf="selectedFile && selectedFile.publicUrl">Open Smash Media</button>
+        <a id="download-link" 
+           download
+           href="https://www.freeiconspng.com/uploads/remove-icon-png-26.png"
+           target="_blank"></a>
+    
+        <div class="behind-the-scenes">
+            <h1>Behind the Scenes</h1>
+            <div class="framework-section">
+                <h2>Main Frameworks used</h2>
+                <img src="/assets/frameworks.PNG"
+                     class="framework-image">
+            </div>
+            <div class="git-section">
+                <h2>Project Notes</h2>
+                <span class="git-repo-title">Git Repo:</span>
+                <a href="https://github.com/taftsandbakken/SuperSmashMediaCollection"
+                   class="git-repo">https://github.com/taftsandbakken/SuperSmashMediaCollection</a>
+                <span class="git-repo-note">(Currently a private repo due to it pointing to public AWS buckets. Please ask to become a collaborator: taftsandbakken@gmail.com)</span>
+            </div>
+        </div>
+    </div>
+</div>
