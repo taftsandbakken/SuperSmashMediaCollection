@@ -1,6 +1,6 @@
 ![Alt text](src/assets/ProjectScreenshot.PNG?raw=true "Project Screenshot")
 
-# Super Smash Media Collection Application
+# Media Collection Application (with Super Smash theme)
 
 An experiment with AWS 3S Storage API (Using Super Smash as a fun topic)
 
